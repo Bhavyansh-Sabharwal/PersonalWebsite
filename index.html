@@ -3,337 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhavyansh Sabharwal - Portfolio</title>
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Bhavyansh Sabharwal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .section {
-            padding: 40px 0;
+        body {
+            font-family: 'Inter', sans-serif;
         }
-        .profile-section {
-            background-color: #004d40;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .profile-picture {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 4px solid white;
-            margin-bottom: 20px;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 10px 0;
-        }
-        .contact-item i {
-            margin-right: 10px;
-        }
-        .container {
-            width: 95%;
-            max-width: 1400px;
-        }
-        .container-narrow {
-            width: 80%;
-            max-width: 1000px;
-        }
-        .experience-card, .projects-card {
-            height: 100%;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .experience-card:hover, .projects-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        nav {
-            background-color: #00796b;
+        .scroll-smooth {
+            scroll-behavior: smooth;
         }
         .modal {
-            max-height: 80%;
-            width: 70%;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
         }
-        .modal-title {
-            font-weight: bold;
-            color: #26a69a;
+        .modal-content {
+            position: relative;
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 0.5rem;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 28px;
+            cursor: pointer;
         }
     </style>
 </head>
-<body>
+<body class="bg-sky-50">
     <!-- Navigation -->
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">BS</a>
-            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-            </ul>
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-sky-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between h-14">
+                <div class="flex items-center">
+                    <a href="#" class="text-lg font-semibold text-sky-900">BS</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sky-800 hover:text-sky-600">About</a>
+                    <a href="#education" class="text-sky-800 hover:text-sky-600">Education</a>
+                    <a href="#experience" class="text-sky-800 hover:text-sky-600">Experience</a>
+                    <a href="#projects" class="text-sky-800 hover:text-sky-600">Projects</a>
+                    <a href="#skills" class="text-sky-800 hover:text-sky-600">Skills</a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- Mobile Navigation -->
-    <ul class="sidenav" id="mobile-nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-    </ul>
-
-    <!-- Profile Section -->
-    <div class="profile-section" id="about">
-        <div class="container">
-            <img src="picture1.png" alt="Profile Picture" class="profile-picture">
-            <h2>Bhavyansh Sabharwal</h2>
-            <p class="flow-text">Computer Science Student at Columbia University</p>
-            <div class="contact-item">
-                <i class="material-icons">email</i>
-                <span>bs3599@columbia.edu</span>
-            </div>
-            <div class="contact-item">
-                <i class="material-icons">phone</i>
-                <span>(317) 702-3496</span>
+    <!-- Hero Section -->
+    <section id="about" class="pt-24 pb-16">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                <div class="md:w-1/3">
+                    <img src="picture1.png" alt="Bhavyansh Sabharwal" class="w-40 h-40 rounded-full object-cover border-4 border-white shadow-lg">
+                </div>
+                <div class="md:w-2/3 text-left">
+                    <h1 class="text-4xl font-bold text-sky-900 mb-3">Bhavyansh Sabharwal</h1>
+                    <p class="text-xl text-sky-700 mb-4">Computer Science Student at Columbia University</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="mailto:bs3599@columbia.edu" class="text-sky-700 hover:text-sky-900">bs3599@columbia.edu</a>
+                        <a href="tel:3177023496" class="text-sky-700 hover:text-sky-900">(317) 702-3496</a>
+                        <div class="flex gap-4">
+                            <a href="https://linkedin.com/in/bhavyansh-sabharwal", target="_blank" class="text-sky-700 hover:text-sky-900">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://github.com/Bhavyansh-Sabharwal", target="_blank" class="text-sky-700 hover:text-sky-900">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Education Section -->
-    <div class="section grey lighten-4" id="education">
-        <div class="container container-narrow">
-            <h3 class="center-align">Education</h3>
-            <div class="row">
-                <div class="col s12">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title">Columbia University</span>
-                            <p>Bachelor of Science in Computer Science</p>
-                            <p>Concentration in Applied Mathematics</p>
-                            <p>Expected May 2027</p>
-                            <p><strong>Activities:</strong> Columbia Space Initiative, Formula SAE, Robotics</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="education" class="py-16 bg-sky-100/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-sky-900 mb-8 text-center">Education</h2>
+            <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-semibold text-sky-900">Columbia University</h3>
+                <p class="text-sky-700 mt-2">Bachelor of Science in Computer Science</p>
+                <p class="text-sky-700">Concentration in Applied Mathematics</p>
+                <p class="text-sky-700 mt-2">Expected May 2027</p>
+                <p class="text-sky-700 mt-2"><strong>Activities:</strong> Columbia Space Initiative, Formula SAE, Robotics</p>
             </div>
         </div>
-    </div>
+    </section>
 
-   <!-- Experience Section -->
-    <div class="section grey lighten-4" id="experience">
-        <div class="container">
-            <h3 class="center-align">Experience</h3>
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="card experience-card modal-trigger" data-target="modal-research">
-                        <div class="card-content">
-                            <span class="card-title">Research Programmer</span>
-                            <p>IUPUI Theoretical Physics Department</p>
-                            <p>August 2022 – July 2024</p>
-                            <ul class="browser-default">
-                                <li>Developed numerical simulations using Python</li>
-                                <li>Designed interactive 3D plots</li>
-                            </ul>
-                            <p class="grey-text">Click to view more...</p>
-                        </div>
-                    </div>
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-sky-100/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-sky-900 mb-8 text-center">Experience</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-5 hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('research-modal')">
+                    <span class="text-sm font-medium text-sky-600">Aug 2022 - Jul 2024</span>
+                    <h3 class="text-xl font-semibold text-sky-900 mt-2">Research Programmer</h3>
+                    <p class="text-sky-700 mb-4">IUPUI Theoretical Physics Department</p>
+                    <ul class="space-y-2 text-sky-700">
+                        <li>• Developed numerical simulations using Python</li>
+                        <li>• Designed interactive 3D plots</li>
+                        <li class="text-sky-500 hover:text-sky-700 underline font-medium">→ Click for more details</li>
+                    </ul>
                 </div>
-                <div class="col s12 m4">
-                    <div class="card experience-card modal-trigger" data-target="modal-internship">
-                        <div class="card-content">
-                            <span class="card-title">Software Engineering Intern</span>
-                            <p>IUPUI STEM Summer Research Program</p>
-                            <p>June 2022 – July 2022</p>
-                            <ul class="browser-default">
-                                <li>Built weather prediction models</li>
-                                <li>Designed interactive heat maps</li>
-                            </ul>
-                            <p class="grey-text">Click to view more...</p>
-                        </div>
-                    </div>
+
+                <div class="bg-white rounded-xl p-5 hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('internship-modal')">
+                    <span class="text-sm font-medium text-sky-600">Jun 2022 - Jul 2022</span>
+                    <h3 class="text-xl font-semibold text-sky-900 mt-2">Software Engineering Intern</h3>
+                    <p class="text-sky-700 mb-4">IUPUI STEM Summer Research</p>
+                    <ul class="space-y-2 text-sky-700">
+                        <li>• Built weather prediction models</li>
+                        <li>• Designed interactive heat maps</li>
+                        <li class="text-sky-500 hover:text-sky-700 underline font-medium">→ Click for more details</li>
+                    </ul>
                 </div>
-                <div class="col s12 m4">
-                    <div class="card experience-card modal-trigger" data-target="modal-robotics">
-                        <div class="card-content">
-                            <span class="card-title">VEX Robotics Team Captain</span>
-                            <p>August 2021 – May 2024</p>
-                            <ul class="browser-default">
-                                <li>Led team to VEX World Championships</li>
-                                <li>Implemented Pure Pursuit algorithm</li>
-                            </ul>
-                            <p class="grey-text">Click to view more...</p>
-                        </div>
-                    </div>
+
+                <div class="bg-white rounded-xl p-5 hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('robotics-modal')">
+                    <span class="text-sm font-medium text-sky-600">Aug 2021 - May 2024</span>
+                    <h3 class="text-xl font-semibold text-sky-900 mt-2">VEX Robotics Team Captain</h3>
+                    <p class="text-sky-700 mb-4">VEX Robotics Club</p>
+                    <ul class="space-y-2 text-sky-700">
+                        <li>• Led team to VEX World Championships</li>
+                        <li>• Implemented Pure Pursuit algorithm</li>
+                        <li class="text-sky-500 hover:text-sky-700 underline font-medium">→ Click for more details</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Projects Section -->
-    <div class="section grey lighten-4" id="projects">
-        <div class="container">
-            <h3 class="center-align">Projects</h3>
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card projects-card modal-trigger" data-target="modal-nyc-haq">
-                        <div class="card-content">
-                            <span class="card-title">NYC HAQ Hackathon</span>
-                            <p>September 2024</p>
-                        </div>
+    <section id="projects" class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-sky-900 mb-8 text-center">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-5 shadow-sm hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('hackathon-modal')">
+                    <h3 class="text-xl font-semibold text-sky-900 mb-2">NYC HAQ Hackathon</h3>
+                    <p class="text-sky-700 mb-4">2nd Place in Quantum Chemistry</p>
+                    <ul class="space-y-2 text-sky-700">
+                        <li>• Simulated ground and excited states using VQE</li>
+                        <li>• Implemented DMFT for metal hydrides</li>
+                        <li class="text-sky-500 hover:text-sky-700 underline font-medium">→ Click for more details</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-5 shadow-sm hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('instantext-modal')">
+                    <h3 class="text-xl font-semibold text-sky-900 mb-2">InstanText</h3>
+                    <p class="text-sky-700 mb-4">Secure Messaging Application</p>
+                    <ul class="space-y-2 text-sky-700">
+                        <li>• Built with Swift and Firebase</li>
+                        <li>• End-to-end encryption</li>
+                        <li class="text-sky-500 hover:text-sky-700 underline font-medium">→ Click for more details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-sky-100/50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-sky-900 mb-8 text-center">Skills</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-lg font-medium text-sky-900 mb-3">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">Java</span>
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">Swift</span>
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">C/C++</span>
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">SQL</span>
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">JavaScript</span>
                     </div>
                 </div>
-                <div class="col s12 m6">
-                    <div class="card projects-card modal-trigger" data-target="modal-instantext">
-                        <div class="card-content">
-                            <span class="card-title">InstanText</span>
-                            <p>June 2023 – July 2023</p>
-                        </div>
+                <div>
+                    <h3 class="text-lg font-medium text-sky-900 mb-3">Frameworks & Libraries</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">NumPy</span>
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">PyTorch</span>
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">TensorFlow</span>
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">React</span>
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">Node.js</span>
+                        <span class="px-3 py-1 bg-white text-sky-700 rounded-full">Angular</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Experience Modals -->
-    <div id="modal-research" class="modal">
+    <!-- Modals -->
+    <div id="research-modal" class="modal">
         <div class="modal-content">
-            <h4 class="modal-title">Research Programmer</h4>
-            <p><strong>IUPUI Theoretical Physics Department</strong></p>
-            <p><em>August 2022 – July 2024</em></p>
-            <ul class="browser-default">
-                <li>Developed numerical simulations of nonlinear pendulum dynamics using Python, leveraging NumPy for efficient computations and SciPy for solving differential equations under complex gauge transformations.</li>
-                <li>Designed color maps and interactive 3D plots to visualize time vs. energy graphs and analyze pendulum behavior by implementing matrix codes and utilizing Matplotlib.</li>
-                <li>Assessed the stability of periodic solutions and detected chaotic behavior using Floquet theory, enhancing the reliability of numerical results in both Hermitian and Non-Hermitian systems.</li>
+            <span class="close" onclick="closeModal('research-modal')">&times;</span>
+            <h3 class="text-2xl font-bold text-sky-900 mb-4">Research Programmer</h3>
+            <p class="text-sky-800 font-medium mb-2">IUPUI Theoretical Physics Department</p>
+            <p class="text-sky-600 mb-4">August 2022 – July 2024</p>
+            <ul class="space-y-3 text-sky-700">
+                <li>• Developed numerical simulations of nonlinear pendulum dynamics using Python, leveraging NumPy for efficient computations and SciPy for solving differential equations under complex gauge transformations.</li>
+                <li>• Designed color maps and interactive 3D plots to visualize time vs. energy graphs and analyze pendulum behavior by implementing matrix codes and utilizing Matplotlib.</li>
+                <li>• Assessed the stability of periodic solutions and detected chaotic behavior using Floquet theory, enhancing the reliability of numerical results in both Hermitian and Non-Hermitian systems.</li>
             </ul>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
-    </div>
-
-    <div id="modal-internship" class="modal">
-        <div class="modal-content">
-            <h4 class="modal-title">Research Intern</h4>
-            <p><strong>IUPUI STEM Summer Research Program</strong></p>
-            <p><em>June 2022 – July 2022</em></p>
-            <ul class="browser-default">
-                <li>Built weather prediction models to forecast patterns based on historical data, applying linear regression and time series analysis with TensorFlow and Scikit-learn, and visualized results to identify trends.</li>
-                <li>Designed interactive heat maps representing Indiana's topography by engineering a geospatial data visualization tool with the Google Maps Elevation API and Tableau.</li>
-                <li>Achieved 95% accuracy in classifying flower species by developing and training a deep neural network using TensorFlow and Keras on the Iris dataset, accompanied by visualizations of model performance.</li>
-            </ul>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
 
-    <div id="modal-robotics" class="modal">
+    <div id="internship-modal" class="modal">
         <div class="modal-content">
-            <h4 class="modal-title">VEX Robotics Team Captain</h4>
-            <p><em>August 2021 – May 2024</em></p>
-            <ul class="browser-default">
-                <li>Led a team to design and program competitive robots using C++, implementing advanced control systems and algorithms that resulted in qualifying for the VEX World Championships.</li>
-                <li>Placed 7th out of 226 in Indiana’s autonomous section by designing a Pure Pursuit algorithm for navigation, integrating odometry data, and validating performance via Python simulations and SIL testing.</li>
-                <li>Improved real-time performance and system reliability by optimizing robot control systems through implementing FreeRTOS-based multithreading, finite state machines, and mutex locks.</li>
+            <span class="close" onclick="closeModal('internship-modal')">&times;</span>
+            <h3 class="text-2xl font-bold text-sky-900 mb-4">Software Engineering Intern</h3>
+            <p class="text-sky-800 font-medium mb-2">IUPUI STEM Summer Research Program</p>
+            <p class="text-sky-600 mb-4">June 2022 – July 2022</p>
+            <ul class="space-y-3 text-sky-700">
+                <li>• Built weather prediction models to forecast patterns based on historical data, applying linear regression and time series analysis with TensorFlow and Scikit-learn, and visualized results to identify trends.</li>
+                <li>• Designed interactive heat maps representing Indiana's topography by engineering a geospatial data visualization tool with the Google Maps Elevation API and Tableau.</li>
+                <li>• Achieved 95% accuracy in classifying flower species by developing and training a deep neural network using TensorFlow and Keras on the Iris dataset, accompanied by visualizations of model performance.</li>
             </ul>
-            <div class="robotics-link">
-                <a href="https://docs.google.com/presentation/d/1i3A5zRKsqie2PzQgF_r3ReT8gw011VX9ezfvPvyETJ0/edit?usp=sharing" target="_blank" class="waves-effect waves-teal btn-flat">
-                    <i class="material-icons left">book</i>View Robotics Notebook
+        </div>
+    </div>
+
+    <div id="robotics-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('robotics-modal')">&times;</span>
+            <h3 class="text-2xl font-bold text-sky-900 mb-4">VEX Robotics Team Captain</h3>
+            <p class="text-sky-600 mb-4">August 2021 – May 2024</p>
+            <ul class="space-y-3 text-sky-700">
+                <li>• Led a team to design and program competitive robots using C++, implementing advanced control systems and algorithms that resulted in qualifying for the VEX World Championships.</li>
+                <li>• Placed 7th out of 226 in Indiana's autonomous section by designing a Pure Pursuit algorithm for navigation, integrating odometry data, and validating performance via Python simulations and SIL testing.</li>
+                <li>• Improved real-time performance and system reliability by optimizing robot control systems through implementing FreeRTOS-based multithreading, finite state machines, and mutex locks.</li>
+            </ul>
+            <div class="mt-4">
+                <a href="https://docs.google.com/presentation/d/1i3A5zRKsqie2PzQgF_r3ReT8gw011VX9ezfvPvyETJ0/edit?usp=sharing" target="_blank" class="text-sky-600 hover:text-sky-800 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                    </svg>
+                    View Robotics Notebook
                 </a>
             </div>
         </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
     </div>
 
-    <!-- Project Modals -->
-    <div id="modal-nyc-haq" class="modal">
+    <div id="hackathon-modal" class="modal">
         <div class="modal-content">
-            <h4 class="modal-title">NYC HAQ Hackathon</h4>
-            <p><strong>September 2024</strong></p>
-            <p>2nd Place in Quantum Chemistry. Tools used: Python, Qiskit, Tangelo.</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            <span class="close" onclick="closeModal('hackathon-modal')">&times;</span>
+            <h3 class="text-2xl font-bold text-sky-900 mb-4">NYC HAQ Hackathon</h3>
+            <p class="text-sky-600 mb-4">September 2024</p>
+            <ul class="space-y-3 text-sky-700">
+                <li>• Simulated ground and excited states of Lithium Hydride (LiH) using VQE and classical solvers (FCI, CCSD).</li>
+                <li>• Simulated metal hydrides for disease treatment with Density Matrix Embedding Theory, scaling to ≤10 qubits.</li>
+                <li>• Placed 2nd in Quantum Chemistry for effective simulation performance on noisy and noiseless backends.</li>
+                <li>• Placed 3rd in a Quantum Quiz, competing against 65 finalists from a pool of 600 applicants.</li>
+            </ul>
         </div>
     </div>
 
-    <div id="modal-instantext" class="modal">
+    <div id="instantext-modal" class="modal">
         <div class="modal-content">
-            <h4 class="modal-title">InstanText</h4>
-            <p><strong>June 2023 – July 2023</strong></p>
-            <p>Secure messaging app built with Swift and Firebase.</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
-    </div>
-
-    <!-- Skills Section -->
-    <div class="section grey lighten-4" id="skills">
-        <div class="container">
-            <h3 class="center-align">Technical Skills</h3>
-            <div class="row">
-                <div class="col s12">
-                    <h5>Languages</h5>
-                    <div class="skills-container">
-                        <div class="chip skill-chip">Python</div>
-                        <div class="chip skill-chip">Java</div>
-                        <div class="chip skill-chip">Swift</div>
-                        <div class="chip skill-chip">C/C++</div>
-                        <div class="chip skill-chip">SQL</div>
-                        <div class="chip skill-chip">JavaScript</div>
-                        <div class="chip skill-chip">HTML/CSS</div>
-                    </div>
-                    <h5>Frameworks & Libraries</h5>
-                    <div class="skills-container">
-                        <div class="chip skill-chip">NumPy</div>
-                        <div class="chip skill-chip">PyTorch</div>
-                        <div class="chip skill-chip">TensorFlow</div>
-                        <div class="chip skill-chip">React</div>
-                        <div class="chip skill-chip">Node.js</div>
-                        <div class="chip skill-chip">Angular</div>
-                    </div>
-                </div>
-            </div>
+            <span class="close" onclick="closeModal('instantext-modal')">&times;</span>
+            <h3 class="text-2xl font-bold text-sky-900 mb-4">InstanText</h3>
+            <p class="text-sky-600 mb-4">June 2023 – July 2023</p>
+            <ul class="space-y-3 text-sky-700">
+                <li>• Created a secure messaging app in Swift with Firebase, implementing real-time chat and user authentication.</li>
+                <li>• Designed an intuitive UI using UIKit, ensuring smooth experience and efficient data storage with Firestore.</li>
+                <li>• Implemented end-to-end encryption and offline message queuing to enhance security and user experience.</li>
+            </ul>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="page-footer teal">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 center-align">
-                    <a href="https://linkedin.com/in/bhavyansh-sabharwal" class="white-text" target="_blank">LinkedIn</a> |
-                    <a href="https://github.com/Bhavyansh-Sabharwal" class="white-text" target="_blank">GitHub</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container center-align">
+    <footer class="py-6 bg-sky-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mt-3 text-sky-600">
                 © 2024 Bhavyansh Sabharwal
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var sidenavElems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(sidenavElems);
+        // Modal functionality
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+        }
 
-            var modalElems = document.querySelectorAll('.modal');
-            M.Modal.init(modalElems);
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scrolling when modal is closed
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
