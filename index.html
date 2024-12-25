@@ -69,19 +69,29 @@
         <div class="max-w-5xl mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
                 <div class="md:w-1/3">
-                    <img src="picture1.png" alt="Bhavyansh Sabharwal" class="w-60 h-60 rounded-full object-cover border-4 border-white shadow-lg">
+                    <img src="picture1.png" alt="Bhavyansh Sabharwal" class="w-64 h-64 rounded-full object-cover border-4 border-white shadow-lg">
                 </div>
                 <div class="md:w-2/3 text-left">
                     <h1 class="text-4xl font-bold text-sky-900 mb-3">Bhavyansh Sabharwal</h1>
                     <p class="text-xl text-sky-700 mb-4">Computer Science Student at Columbia University</p>
+                    <p class="text-sky-700 mb-6">
+                        Hi, I'm Bhavyansh Sabharwal, a Computer Science undergraduate at Columbia University, specializing in Applied Mathematics. I'm interested in technology, research, and problem-solving, with a focus on machine learning, autonomous systems, and software development.
+                        <br><br>
+                        I’ve worked on exciting projects, such as developing algorithms for autonomous robotics, conducting research in nonlinear dynamics and deep learning, and building real-time speech analysis platforms. My professional experiences include internships in software engineering, where I automated workflows, built predictive models, and leveraged AI for document analysis. As a research programmer, I contributed to simulations and visualizations that found insights in complex systems.
+                        <br><br>
+                        Outside of academics and work, I enjoy reading books, speedcubing, watching comedic movies, and spending time with my friends and family.
+                        <br><br>
+                        Feel free to explore my work or reach out—I’d love to connect!
+                        
+                    <a href="https://drive.google.com/file/d/1cy7FDtiZnZ9rjMDTsGzTmevoWDHoD-FR/view?usp=sharing" target="_blank" class="text-sky-600 hover:text-sky-800 underline">View my resume →</a></p>
                     <div class="flex flex-col gap-3">
                         <a href="mailto:bs3599@columbia.edu" class="text-sky-700 hover:text-sky-900">bs3599@columbia.edu</a>
                         <a href="tel:3177023496" class="text-sky-700 hover:text-sky-900">(317) 702-3496</a>
                         <div class="flex gap-4">
-                            <a href="https://linkedin.com/in/bhavyansh-sabharwal", target="_blank" class="text-sky-700 hover:text-sky-900">
+                            <a href="https://linkedin.com/in/bhavyansh-sabharwal" target="_blank" class="text-sky-700 hover:text-sky-900">
                                 <i class="fab fa-linkedin text-xl"></i>
                             </a>
-                            <a href="https://github.com/Bhavyansh-Sabharwal", target="_blank" class="text-sky-700 hover:text-sky-900">
+                            <a href="https://github.com/Bhavyansh-Sabharwal" target="_blank" class="text-sky-700 hover:text-sky-900">
                                 <i class="fab fa-github text-xl"></i>
                             </a>
                         </div>
@@ -109,29 +119,44 @@
     <section id="experience" class="py-16 bg-sky-100/50">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-sky-900 mb-8 text-center">Experience</h2>
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Standard Partners -->
+                <div class="bg-white rounded-xl p-5 hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('standard-modal')">
+                    <span class="text-sm font-medium text-sky-600">Dec 2024 - Jan 2025</span>
+                    <h3 class="text-xl font-semibold text-sky-900 mt-2">Software Engineering Intern</h3>
+                    <p class="text-sky-700 mb-4">Standard Partners LLC</p>
+                    <ul class="space-y-2 text-sky-700">
+                        <li>• Developed web scraper for court documents</li>
+                        <li>• Implemented AI-based document analysis</li>
+                        <li class="text-sky-500 hover:text-sky-700 underline font-medium">→ Click for more details</li>
+                    </ul>
+                </div>
+
+                <!-- Research Position -->
                 <div class="bg-white rounded-xl p-5 hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('research-modal')">
                     <span class="text-sm font-medium text-sky-600">Aug 2022 - Jul 2024</span>
                     <h3 class="text-xl font-semibold text-sky-900 mt-2">Research Programmer</h3>
                     <p class="text-sky-700 mb-4">IUPUI Theoretical Physics Department</p>
                     <ul class="space-y-2 text-sky-700">
-                        <li>• Developed numerical simulations using Python</li>
-                        <li>• Designed interactive 3D plots</li>
+                        <li>• Developed numerical simulations</li>
+                        <li>• Created visualization tools</li>
                         <li class="text-sky-500 hover:text-sky-700 underline font-medium">→ Click for more details</li>
                     </ul>
                 </div>
 
+                <!-- STEM Research -->
                 <div class="bg-white rounded-xl p-5 hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('internship-modal')">
                     <span class="text-sm font-medium text-sky-600">Jun 2022 - Jul 2022</span>
                     <h3 class="text-xl font-semibold text-sky-900 mt-2">Software Engineering Intern</h3>
                     <p class="text-sky-700 mb-4">IUPUI STEM Summer Research</p>
                     <ul class="space-y-2 text-sky-700">
                         <li>• Built weather prediction models</li>
-                        <li>• Designed interactive heat maps</li>
+                        <li>• Achieved 95% accuracy in ML models</li>
                         <li class="text-sky-500 hover:text-sky-700 underline font-medium">→ Click for more details</li>
                     </ul>
                 </div>
 
+                <!-- VEX Robotics -->
                 <div class="bg-white rounded-xl p-5 hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('robotics-modal')">
                     <span class="text-sm font-medium text-sky-600">Aug 2021 - May 2024</span>
                     <h3 class="text-xl font-semibold text-sky-900 mt-2">VEX Robotics Team Captain</h3>
@@ -145,6 +170,84 @@
             </div>
         </div>
     </section>
+
+    <!-- Experience Modals -->
+
+    <!-- Standard Partners Modal -->
+    <div id="standard-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('standard-modal')">&times;</span>
+            <h3 class="text-2xl font-bold text-sky-900 mb-4">Software Engineering Intern</h3>
+            <p class="text-sky-800 font-medium mb-2">Standard Partners LLC</p>
+            <p class="text-sky-600 mb-4">December 2024 – January 2025</p>
+            <ul class="space-y-3 text-sky-700">
+                <li>• Developed a web scraper using BeautifulSoup and requests with crontab scheduling to automate extraction of bankruptcy court documents, saving 5+ hours per week in manual data collection.</li>
+                <li>• Leveraged GPT-based AI to analyze and categorize documents and identify relevant ones with 95% accuracy.</li>
+                <li>• Used pandas for Excel file manipulation and data extraction, improving document matching efficiency.</li>
+                <li>• Automatically extracted images and tables from documents, streamlining data extraction and processing.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Research Modal -->
+    <div id="research-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('research-modal')">&times;</span>
+            <h3 class="text-2xl font-bold text-sky-900 mb-4">Research Programmer</h3>
+            <p class="text-sky-800 font-medium mb-2">IUPUI Theoretical Physics Department</p>
+            <p class="text-sky-600 mb-4">August 2022 – July 2024</p>
+            <ul class="space-y-3 text-sky-700">
+                <li>• Developed numerical simulations of nonlinear pendulum dynamics using Python, leveraging NumPy for efficient computations and SciPy for solving differential equations under complex gauge transformations.</li>
+                <li>• Developed color maps and 3D plots to visualize pendulum behavior, implementing Matplotlib for analysis.</li>
+                <li>• Assessed stability and detected chaotic behavior using Floquet theory, enhancing reliability of numerical results.</li>
+            </ul>
+            <div class="mt-4">
+                <a href="https://drive.google.com/file/d/1P1XZ3m7q5zpVqBkW2pr4KiDD4mDdHrNn/view?usp=sharing" target="_blank" class="text-sky-600 hover:text-sky-800 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                    </svg>
+                    View Research Abstract
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEM Internship Modal -->
+    <div id="internship-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('internship-modal')">&times;</span>
+            <h3 class="text-2xl font-bold text-sky-900 mb-4">Software Engineering Intern</h3>
+            <p class="text-sky-800 font-medium mb-2">IUPUI STEM Summer Research Program</p>
+            <p class="text-sky-600 mb-4">June 2022 – July 2022</p>
+            <ul class="space-y-3 text-sky-700">
+                <li>• Built weather outlook models using linear regression and temporal analysis with TensorFlow and scikit-learn.</li>
+                <li>• Designed geospatial heat maps of Indiana's topography with the Google Maps Elevation API and Tableau.</li>
+                <li>• Achieved 95% accuracy in classifying flower species by developing and training a deep neural network using TensorFlow and Keras, accompanied by visualizations of model performance.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Robotics Modal -->
+    <div id="robotics-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('robotics-modal')">&times;</span>
+            <h3 class="text-2xl font-bold text-sky-900 mb-4">VEX Robotics Team Captain</h3>
+            <p class="text-sky-600 mb-4">August 2021 – May 2024</p>
+            <ul class="space-y-3 text-sky-700">
+                <li>• Led a team to design and program competitive robots using C++, implementing advanced control systems and algorithms that resulted in qualifying for the VEX World Championships.</li>
+                <li>• Placed 7th out of 226 in Indiana's autonomous section by designing a Pure Pursuit algorithm for navigation, integrating Odometry data, and validating performance via Python simulations and SIL testing.</li>
+                <li>• Improved real-time performance and system reliability by optimizing robot control systems through implementing FreeRTOS-based multithreading, finite state machines, and mutex locks.</li>
+            </ul>
+            <div class="mt-4">
+                <a href="https://docs.google.com/presentation/d/1i3A5zRKsqie2PzQgF_r3ReT8gw011VX9ezfvPvyETJ0/edit?usp=sharing" target="_blank" class="text-sky-600 hover:text-sky-800 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                    </svg>
+                    View Robotics Notebook
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Projects Section -->
     <section id="projects" class="py-16">
@@ -161,12 +264,12 @@
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-xl p-5 shadow-sm hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('instantext-modal')">
-                    <h3 class="text-xl font-semibold text-sky-900 mb-2">InstanText</h3>
-                    <p class="text-sky-700 mb-4">Secure Messaging Application</p>
+                <div class="bg-white rounded-xl p-5 shadow-sm hover:shadow-lg transition duration-300 cursor-pointer" onclick="openModal('speakalytics-modal')">
+                    <h3 class="text-xl font-semibold text-sky-900 mb-2">Speakalytics</h3>
+                    <p class="text-sky-700 mb-4">Real-time Speech Analysis Platform</p>
                     <ul class="space-y-2 text-sky-700">
-                        <li>• Built with Swift and Firebase</li>
-                        <li>• End-to-end encryption</li>
+                        <li>• Built with React and TypeScript</li>
+                        <li>• Uses Deepgram and Groq APIs</li>
                         <li class="text-sky-500 hover:text-sky-700 underline font-medium">→ Click for more details</li>
                     </ul>
                 </div>
@@ -205,55 +308,7 @@
         </div>
     </section>
 
-    <!-- Modals -->
-    <div id="research-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('research-modal')">&times;</span>
-            <h3 class="text-2xl font-bold text-sky-900 mb-4">Research Programmer</h3>
-            <p class="text-sky-800 font-medium mb-2">IUPUI Theoretical Physics Department</p>
-            <p class="text-sky-600 mb-4">August 2022 – July 2024</p>
-            <ul class="space-y-3 text-sky-700">
-                <li>• Developed numerical simulations of nonlinear pendulum dynamics using Python, leveraging NumPy for efficient computations and SciPy for solving differential equations under complex gauge transformations.</li>
-                <li>• Designed color maps and interactive 3D plots to visualize time vs. energy graphs and analyze pendulum behavior by implementing matrix codes and utilizing Matplotlib.</li>
-                <li>• Assessed the stability of periodic solutions and detected chaotic behavior using Floquet theory, enhancing the reliability of numerical results in both Hermitian and Non-Hermitian systems.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="internship-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('internship-modal')">&times;</span>
-            <h3 class="text-2xl font-bold text-sky-900 mb-4">Software Engineering Intern</h3>
-            <p class="text-sky-800 font-medium mb-2">IUPUI STEM Summer Research Program</p>
-            <p class="text-sky-600 mb-4">June 2022 – July 2022</p>
-            <ul class="space-y-3 text-sky-700">
-                <li>• Built weather prediction models to forecast patterns based on historical data, applying linear regression and time series analysis with TensorFlow and Scikit-learn, and visualized results to identify trends.</li>
-                <li>• Designed interactive heat maps representing Indiana's topography by engineering a geospatial data visualization tool with the Google Maps Elevation API and Tableau.</li>
-                <li>• Achieved 95% accuracy in classifying flower species by developing and training a deep neural network using TensorFlow and Keras on the Iris dataset, accompanied by visualizations of model performance.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="robotics-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('robotics-modal')">&times;</span>
-            <h3 class="text-2xl font-bold text-sky-900 mb-4">VEX Robotics Team Captain</h3>
-            <p class="text-sky-600 mb-4">August 2021 – May 2024</p>
-            <ul class="space-y-3 text-sky-700">
-                <li>• Led a team to design and program competitive robots using C++, implementing advanced control systems and algorithms that resulted in qualifying for the VEX World Championships.</li>
-                <li>• Placed 7th out of 226 in Indiana's autonomous section by designing a Pure Pursuit algorithm for navigation, integrating odometry data, and validating performance via Python simulations and SIL testing.</li>
-                <li>• Improved real-time performance and system reliability by optimizing robot control systems through implementing FreeRTOS-based multithreading, finite state machines, and mutex locks.</li>
-            </ul>
-            <div class="mt-4">
-                <a href="https://docs.google.com/presentation/d/1i3A5zRKsqie2PzQgF_r3ReT8gw011VX9ezfvPvyETJ0/edit?usp=sharing" target="_blank" class="text-sky-600 hover:text-sky-800 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
-                    </svg>
-                    View Robotics Notebook
-                </a>
-            </div>
-        </div>
-    </div>
+    <!-- Projects Modals -->
 
     <div id="hackathon-modal" class="modal">
         <div class="modal-content">
@@ -266,19 +321,36 @@
                 <li>• Placed 2nd in Quantum Chemistry for effective simulation performance on noisy and noiseless backends.</li>
                 <li>• Placed 3rd in a Quantum Quiz, competing against 65 finalists from a pool of 600 applicants.</li>
             </ul>
+            <div class="mt-4">
+                <a href="https://dorahacks.io/buidl/16710/" target="_blank" class="text-sky-600 hover:text-sky-800 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                    </svg>
+                    View Project on qBraid
+                </a>
+            </div>
         </div>
     </div>
+    
 
-    <div id="instantext-modal" class="modal">
+    <div id="speakalytics-modal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('instantext-modal')">&times;</span>
-            <h3 class="text-2xl font-bold text-sky-900 mb-4">InstanText</h3>
-            <p class="text-sky-600 mb-4">June 2023 – July 2023</p>
+            <span class="close" onclick="closeModal('speakalytics-modal')">&times;</span>
+            <h3 class="text-2xl font-bold text-sky-900 mb-4">Speakalytics</h3>
+            <p class="text-sky-600 mb-4">October 2024</p>
             <ul class="space-y-3 text-sky-700">
-                <li>• Created a secure messaging app in Swift with Firebase, implementing real-time chat and user authentication.</li>
-                <li>• Designed an intuitive UI using UIKit, ensuring smooth experience and efficient data storage with Firestore.</li>
-                <li>• Implemented end-to-end encryption and offline message queuing to enhance security and user experience.</li>
+                <li>• Developed a real-time speech analysis platform providing feedback on clarity, confidence, and emotional reach using Deepgram API for live transcription and Groq API for delivery evaluation.</li>
+                <li>• Built a responsive UI with React and TypeScript, highlighting filler words and offering refinement suggestions.</li>
+                <li>• Integrated Firebase for user authentication and stored recordings in MongoDB for user progress tracking.</li>
             </ul>
+            <div class="mt-4">
+                <a href="https://devpost.com/software/speakalytic" target="_blank" class="text-sky-600 hover:text-sky-800 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                    </svg>
+                    View Project on Devpost
+                </a>
+            </div>
         </div>
     </div>
 
